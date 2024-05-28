@@ -4,6 +4,8 @@ import Pricing from './pages/Pricing'
 import About from './pages/About'
 import Home from './pages/Home'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+// import 'antd/dist/antd.css'; // Import Ant Design styles
+
 
 function App() {
   return (
@@ -21,3 +23,5 @@ function App() {
 }
 
 export default App
+
+
