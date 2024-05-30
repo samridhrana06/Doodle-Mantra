@@ -1,73 +1,85 @@
-// import React, { useState } from 'react';
-// import './Carousel.css'; // Import your CSS file
+import React, { useEffect } from 'react';
+import './Carousel.css';
 
-// const Carousel = ({ images }) => {
-//   const [currentIndex, setCurrentIndex] = useState(0);
+const CarouselCustom = () => {
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      const nextButton = document.querySelector('.carousel-control-next');
+      nextButton.click();
+    }, 2000);
 
-//   const nextSlide = () => {
-//     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-//   };
+    return () => clearInterval(intervalId);
+  }, []);
 
-//   const prevSlide = () => {
-//     setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
-//   };
-
-//   return (
-//     <div className="carousel">
-//       <button className="carousel__button carousel__button--left" onClick={prevSlide}>
-//         &#8249;
-//       </button>
-//       <div className="carousel__images">
-//         {images.map((image, index) => (
-//           <img
-//             key={index}
-//             src={image}
-//             alt={`Slide ${index}`}
-//             className={`carousel__image ${index === currentIndex ? 'carousel__image--visible' : ''}`}
-//           />
-//         ))}
-//       </div>
-//       <button className="carousel__button carousel__button--right" onClick={nextSlide}>
-//         &#8250;
-//       </button>
-//     </div>
-//   );
-// };
-
-// export default Carousel;
-
-import React from 'react';
-import { Carousel } from 'antd';
-
-const contentStyle = {
-  margin: 0,
-  height: '100%',
-  color: '#fff',
-  lineHeight: '160px',
-  textAlign: 'center',
-  background: '#364d79',
+  return (
+    <>
+      <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
+        <div className="carousel-indicators">
+          <button 
+            type="button" 
+            data-bs-target="#carouselExampleIndicators" 
+            data-bs-slide-to="0" 
+            className="active" 
+            aria-current="true" 
+            aria-label="Slide 1"
+          ></button>
+          <button 
+            type="button" 
+            data-bs-target="#carouselExampleIndicators" 
+            data-bs-slide-to="1" 
+            aria-label="Slide 2"
+          ></button>
+          <button 
+            type="button" 
+            data-bs-target="#carouselExampleIndicators" 
+            data-bs-slide-to="2" 
+            aria-label="Slide 3"
+          ></button>
+        </div>
+        <div className="carousel-inner">
+          <div className="carousel-item active">
+            <img 
+              src="src/assets/david-marcu-78A265wPiO4-unsplash.jpg" 
+              className="d-block w-100" 
+              alt="Beautiful Landscape" 
+            />
+          </div>
+          <div className="carousel-item">
+            <img 
+              src="src/assets/david-marcu-78A265wPiO4-unsplash.jpg" 
+              className="d-block w-100" 
+              alt="Beautiful Landscape" 
+            />
+          </div>
+          <div className="carousel-item">
+            <img 
+              src="src/assets/david-marcu-78A265wPiO4-unsplash.jpg" 
+              className="d-block w-100" 
+              alt="Beautiful Landscape" 
+            />
+          </div>
+        </div>
+        <button 
+          className="carousel-control-prev" 
+          type="button" 
+          data-bs-target="#carouselExampleIndicators" 
+          data-bs-slide="prev"
+        >
+          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span className="visually-hidden">Previous</span>
+        </button>
+        <button 
+          className="carousel-control-next" 
+          type="button" 
+          data-bs-target="#carouselExampleIndicators" 
+          data-bs-slide="next"
+        >
+          <span className="carousel-control-next-icon" aria-hidden="true"></span>
+          <span className="visually-hidden">Next</span>
+        </button>
+      </div>
+    </>
+  );
 };
 
-const CarouselCustom = () => (
-  <>
-    <Carousel arrows infinite={false}>
-      <div>
-        <h3 style={contentStyle}>1</h3>
-      </div>
-      <div>
-        <h3 style={contentStyle}>2</h3>
-      </div>
-      <div>
-        <h3 style={contentStyle}>3</h3>
-      </div>
-      <div>
-        <h3 style={contentStyle}>4</h3>
-      </div>
-    </Carousel>
-    <br />
-    
-  </>
-);
-
 export default CarouselCustom;
-

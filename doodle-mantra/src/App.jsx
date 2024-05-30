@@ -5,7 +5,7 @@ import About from './pages/About'
 import Home from './pages/Home'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 // import 'antd/dist/antd.css'; // Import Ant Design styles
-
+import "./../node_modules/bootstrap/dist/css/bootstrap.min.css"
 
 function App() {
   return (
@@ -18,6 +18,8 @@ function App() {
           <Route path="/about" element={<About />} />
         </Routes>
       </div>
+
+
   </>
   )
 }

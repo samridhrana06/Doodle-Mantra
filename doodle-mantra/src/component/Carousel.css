@@ -1,48 +1,12 @@
-.carousel {
-    position: relative;
-    width: 100%;
-    max-width: 60%;
-    margin: auto;
-    overflow: hidden;
-    box-shadow: 0 0 10px ;
-  }
-  
-  .carousel__images {
-    display: flex;
-    transition: transform 0.8s ease-in-out;
-  }
-  
-  .carousel__image {
-    min-width: 100%;
-    transition: opacity 0.5s ease-in-out;
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-  
-  .carousel__image--visible {
-    opacity: 1;
-    position: relative;
-  }
-  
-  .carousel__button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    z-index: 2;
-  }
-  
-  .carousel__button--left {
-    left: 10px;
-  }
-  
-  .carousel__button--right {
-    right: 10px;
-  }
-  
+.carousel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50%; /* Full height to center vertically */
+  width: 100%;
+}
+
+.carousel-inner {
+  max-width: 100%; /* Set a max-width if needed */
+  width: 100%;
+}
